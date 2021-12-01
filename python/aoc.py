@@ -51,3 +51,18 @@ def line_print(lines):
 
 def maxval(d):
     return max(d.values())
+
+
+if __name__ == "__main__":
+    assert cat(["ab", "cd", "ef"]) == "abcdef"
+    assert mapl(int, ["1", "2"]) == [1, 2]
+    assert mapt(int, ["1", "2"]) == (1, 2)
+    assert digits("123") == (1, 2, 3)
+    assert integers("23 -42 55") == (23, -42, 55)
+    assert integers("23 -42 55", negative=False) == (23, 42, 55)
+    assert count([3, -5, 10, -7, 33], lambda x: x > 0) == 3
+    assert first([2, 4, 6, 8]) == 2
+    assert filter_first([2, 7, 4, 6, 8], lambda x: x > 5) == 7
+    assert manhattan((5, -3)) == 8
+    assert manhattan((5, -3), (2, 7)) == 13
+    assert maxval(dict(a=3, b=99, c=66)) == 99
