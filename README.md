@@ -25,7 +25,7 @@ I'll probably add solutions in other languages on some later date.
 Task                                          | Python Solution             | Comment
 ---                                           | ---                         | ---
 [Day 01](http://adventofcode.com/2021/day/1)  | [day01.py](python/day01.py) | `(a + b + c) < (b + c + d)` --> `a < d`
-[Day 02](http://adventofcode.com/2021/day/2)  | [day02.py](python/day02.py) |
+[Day 02](http://adventofcode.com/2021/day/2)  | [day02.py](python/day02.py) | "Up, up, down, down, left, right, left, right..."
 [Day 03](http://adventofcode.com/2021/day/3)  | [day03.py](python/day03.py) |
 [Day 04](http://adventofcode.com/2021/day/4)  | [day04.py](python/day04.py) |
 [Day 05](http://adventofcode.com/2021/day/5)  | [day05.py](python/day05.py) |
