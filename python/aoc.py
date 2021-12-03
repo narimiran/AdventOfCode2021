@@ -52,6 +52,12 @@ def line_print(lines):
 def maxval(d):
     return max(d.values())
 
+def transpose(matrix):
+    return list(zip(*matrix))
+
+def bin2int(s):
+    return int(s, 2)
+
 
 if __name__ == "__main__":
     assert cat(["ab", "cd", "ef"]) == "abcdef"
