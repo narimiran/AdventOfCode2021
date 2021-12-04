@@ -13,6 +13,9 @@ def mapl(f, iterable):
 def mapt(f, iterable):
     return tuple(map(f, iterable))
 
+def filterl(f, iterable):
+    return list(filter(f, iterable))
+
 def read_input(filename, datatype=str, sep='\n'):
     filename = f"{filename:02d}" if isinstance(filename, int) else filename
     with open(f"inputs/{filename}.txt") as f:
@@ -63,6 +66,7 @@ if __name__ == "__main__":
     assert cat(["ab", "cd", "ef"]) == "abcdef"
     assert mapl(int, ["1", "2"]) == [1, 2]
     assert mapt(int, ["1", "2"]) == (1, 2)
+    assert filterl(lambda x: x > 3, [1, 5, 2, 4, 3]) == [5, 4]
     assert digits("123") == (1, 2, 3)
     assert integers("23 -42 55") == (23, -42, 55)
     assert integers("23 -42 55", negative=False) == (23, 42, 55)
