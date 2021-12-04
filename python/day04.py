@@ -3,24 +3,23 @@ from aoc import *
 
 class Board:
     def __init__(self, board):
-        board = mapl(digits, map(str.split, board.splitlines()))
+        board = mapl(integers, board.splitlines())
         self.rows = mapt(set, board)
         self.cols = mapt(set, zip(*board))
         self.won = False
 
     def is_winner(self, drawn):
-        return (any(col <= drawn for col in self.cols) or
-                any(row <= drawn for row in self.rows))
+        return any(any(line <= drawn for line in direction)
+                   for direction in (self.rows, self.cols))
 
     def unmarked_sum(self, drawn):
         return sum(sum(col - drawn) for col in self.cols)
 
 
 def parse_input(task):
-    data = read_input(task, sep="\n\n")
-    numbers = digits(data[0].split(','))
-    boards = [Board(board) for board in data[1:]]
-    return numbers, boards
+    numbers, *boards = read_input(task, sep="\n\n")
+    yield integers(numbers)
+    yield [Board(board) for board in boards]
 
 
 def solve(numbers, boards):
