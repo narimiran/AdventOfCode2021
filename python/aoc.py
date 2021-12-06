@@ -1,10 +1,12 @@
 import re
+from itertools import chain
 
 
 # Most of this is shamelessly stolen from Peter Norvig.
 
 cat = ''.join
 inf = float('inf')
+flatten = chain.from_iterable
 
 
 def mapl(f, iterable):
@@ -21,9 +23,6 @@ def read_input(filename, datatype=str, sep='\n'):
     with open(f"inputs/{filename}.txt") as f:
         contents = f.read().strip().split(sep)
         return mapl(datatype, contents)
-
-def read_input_line(filename, datatype=str, sep=' '):
-    return read_input(filename, datatype=datatype, sep=sep)
 
 def digits(line):
     return mapt(int, line)
