@@ -1,19 +1,16 @@
 from aoc import *
 from statistics import median, mean
+from math import floor, ceil
 
 
-def part_1(data):
-    m = int(median(data))
-    return sum(abs(n-m) for n in data)
-
-def part_2(data):
-    fuel = lambda d: d*(d+1) // 2
-    m = int(mean(data))
-    return min(sum(fuel(abs(n-p)) for n in data)
-               for p in range(m-1, m+2))
+def solve(data, mid, func):
+    m = mid(data)
+    return min(sum(func(abs(n-p)) for n in data)
+               for p in (floor(m), ceil(m)))
 
 
 data = read_input(7, int, ',')
+fuel = lambda d: d*(d+1) // 2
 
-print(part_1(data))
-print(part_2(data))
+print(solve(data, median, int))
+print(solve(data, mean, fuel))
