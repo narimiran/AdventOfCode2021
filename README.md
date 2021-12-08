@@ -31,7 +31,7 @@ Task                                                                      | Pyth
 [Day 05: Hydrothermal Venture](http://adventofcode.com/2021/day/5)        | [day05.py](python/day05.py) | TIL `defaultdict` is faster than `Counter`.
 [Day 06: Lanternfish](http://adventofcode.com/2021/day/6)                 | [day06.py](python/day06.py) | Recursion with memoization.
 [Day 07: The Treachery of Whales](http://adventofcode.com/2021/day/7)     | [day07.py](python/day07.py) | Mean `mean`!
-[Day 08](http://adventofcode.com/2021/day/8)                              | [day08.py](python/day08.py) |
+[Day 08: Seven Segment Search](http://adventofcode.com/2021/day/8)        | [day08.py](python/day08.py) | Using Python 3.10 and pattern matching.
 [Day 09](http://adventofcode.com/2021/day/9)                              | [day09.py](python/day09.py) |
 [Day 10](http://adventofcode.com/2021/day/10)                             | [day10.py](python/day10.py) |
 [Day 11](http://adventofcode.com/2021/day/11)                             | [day11.py](python/day11.py) |
