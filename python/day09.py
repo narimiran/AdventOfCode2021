@@ -2,16 +2,19 @@ from aoc import *
 from math import prod
 
 
-neighbors = lambda x, y: ((x-1, y), (x, y-1), (x, y+1), (x+1, y))
-is_inside = lambda x, y: 0 <= x < w and 0 <= y < h
+def neighbors(x, y):
+    adjacent = lambda x, y: ((x-1, y), (x, y-1), (x, y+1), (x+1, y))
+    in_bounds = lambda x, y: 0 <= x < w and 0 <= y < h
+    yield from (pt for pt in adjacent(x, y) if in_bounds(*pt))
 
 
 def calc_basin(x, y, seen=None):
     seen = seen or {(x, y)}
-    for nx, ny in neighbors(x, y):
-        if (nx, ny) not in seen and is_inside(nx, ny) and data[ny][nx] < 9:
-            seen.add((nx, ny))
-            calc_basin(nx, ny, seen)
+    height = lambda x, y: data[y][x]
+    for nb in neighbors(x, y):
+        if nb not in seen and height(*nb) < 9:
+            seen.add(nb)
+            calc_basin(*nb, seen)
     return len(seen)
 
 
@@ -20,8 +23,7 @@ def solve(data):
         for y, line in enumerate(data)
             for x, height in enumerate(line)
                 if all(height < data[ny][nx]
-                       for nx, ny in neighbors(x, y)
-                       if is_inside(nx, ny))))
+                       for nx, ny in neighbors(x, y))))
     return sum(risks), prod(sorted(basins, reverse=True)[:3])
 
 
