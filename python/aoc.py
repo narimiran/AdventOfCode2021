@@ -1,5 +1,5 @@
 import re
-from itertools import chain
+from itertools import chain, product
 
 
 # Most of this is shamelessly stolen from Peter Norvig.
@@ -25,7 +25,7 @@ def read_input(filename, datatype=str, sep='\n'):
         return mapl(datatype, contents)
 
 def digits(line):
-    return mapt(int, line)
+    return mapl(int, line)
 
 def integers(text, negative=True):
     return mapt(int, re.findall(r"-?\d+" if negative else r"\d+", text))
@@ -60,13 +60,23 @@ def transpose(matrix):
 def bin2int(s):
     return int(s, 2)
 
+def neighbours(grid, x, y, amount=4):
+    assert amount in {4, 8, 9}
+    w, h = len(grid[0]), len(grid)
+    for dy, dx in product((-1, 0, 1), repeat=2):
+        if ((amount == 4 and abs(dx) != abs(dy)) or
+            (amount == 8 and not dx == dy == 0) or
+             amount == 9):
+            if 0 <= x+dx < w and 0 <= y+dy < h:
+                yield (x+dx, y+dy)
+
 
 if __name__ == "__main__":
     assert cat(["ab", "cd", "ef"]) == "abcdef"
     assert mapl(int, ["1", "2"]) == [1, 2]
     assert mapt(int, ["1", "2"]) == (1, 2)
     assert filterl(lambda x: x > 3, [1, 5, 2, 4, 3]) == [5, 4]
-    assert digits("123") == (1, 2, 3)
+    assert digits("123") == [1, 2, 3]
     assert integers("23 -42 55") == (23, -42, 55)
     assert integers("23 -42 55", negative=False) == (23, 42, 55)
     assert count([3, -5, 10, -7, 33], lambda x: x > 0) == 3
@@ -75,3 +85,13 @@ if __name__ == "__main__":
     assert manhattan((5, -3)) == 8
     assert manhattan((5, -3), (2, 7)) == 13
     assert maxval(dict(a=3, b=99, c=66)) == 99
+    grid = [10*[0] for _ in range(10)]
+    assert tuple(neighbours(grid, 5, 7)) == ((5, 6),
+                                     (4, 7),         (6, 7),
+                                             (5, 8))
+    assert tuple(neighbours(grid, 0, 0)) == ((1, 0), (0, 1))
+    assert tuple(neighbours(grid, 5, 7, amount=8)) == ((4, 6), (5, 6), (6, 6),
+                                                       (4, 7),         (6, 7),
+                                                       (4, 8), (5, 8), (6, 8))
+    assert tuple(neighbours(grid, 0, 0, 8)) == ((1, 0),
+                                        (0, 1), (1, 1))
