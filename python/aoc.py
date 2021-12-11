@@ -1,5 +1,5 @@
 import re
-from itertools import chain, product
+from itertools import chain, product, count as count_from
 
 
 # Most of this is shamelessly stolen from Peter Norvig.
@@ -60,15 +60,18 @@ def transpose(matrix):
 def bin2int(s):
     return int(s, 2)
 
-def neighbours(grid, x, y, amount=4):
+def neighbours(x, y, amount=4):
     assert amount in {4, 8, 9}
-    w, h = len(grid[0]), len(grid)
     for dy, dx in product((-1, 0, 1), repeat=2):
         if ((amount == 4 and abs(dx) != abs(dy)) or
             (amount == 8 and not dx == dy == 0) or
              amount == 9):
-            if 0 <= x+dx < w and 0 <= y+dy < h:
-                yield (x+dx, y+dy)
+            yield (x+dx, y+dy)
+
+def list2grid(lines):
+    return {(x, y): val
+            for y, line in enumerate(lines)
+            for x, val in enumerate(line)}
 
 
 if __name__ == "__main__":
@@ -85,13 +88,11 @@ if __name__ == "__main__":
     assert manhattan((5, -3)) == 8
     assert manhattan((5, -3), (2, 7)) == 13
     assert maxval(dict(a=3, b=99, c=66)) == 99
-    grid = [10*[0] for _ in range(10)]
-    assert tuple(neighbours(grid, 5, 7)) == ((5, 6),
-                                     (4, 7),         (6, 7),
-                                             (5, 8))
-    assert tuple(neighbours(grid, 0, 0)) == ((1, 0), (0, 1))
-    assert tuple(neighbours(grid, 5, 7, amount=8)) == ((4, 6), (5, 6), (6, 6),
-                                                       (4, 7),         (6, 7),
-                                                       (4, 8), (5, 8), (6, 8))
-    assert tuple(neighbours(grid, 0, 0, 8)) == ((1, 0),
-                                        (0, 1), (1, 1))
+    assert tuple(neighbours(5, 7)) == ((5, 6),
+                               (4, 7),         (6, 7),
+                                       (5, 8))
+    assert tuple(neighbours(5, 7, amount=8)) == ((4, 6), (5, 6), (6, 6),
+                                                 (4, 7),         (6, 7),
+                                                 (4, 8), (5, 8), (6, 8))
+    assert list2grid([[10, 20], [30, 40]]) == {(0, 0): 10, (1, 0): 20,
+                                               (0, 1): 30, (1, 1): 40}
