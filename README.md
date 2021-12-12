@@ -24,6 +24,7 @@ I'll probably add solutions in other languages on some later date.
 
 Task                                                                      | Python Solution             | Comment
 ---                                                                       | ---                         | ---
+Day 00: Helper file                                                        | [aoc.py](python/aoc.py)     | Utilities to use for solving the tasks.
 [Day 01: Sonar Sweep](http://adventofcode.com/2021/day/1)                 | [day01.py](python/day01.py) | `(a + b + c) < (b + c + d)` --> `a < d`
 [Day 02: Dive!](http://adventofcode.com/2021/day/2)                       | [day02.py](python/day02.py) | "Up, up, down, down, left, right, left, right..."
 [Day 03: Binary Diagnostic](http://adventofcode.com/2021/day/3)           | [day03.py](python/day03.py) | ` from collections import Counter`
@@ -35,7 +36,7 @@ Task                                                                      | Pyth
 [Day 09: Smoke Basin](http://adventofcode.com/2021/day/9)                 | [day09.py](python/day09.py) | Recursive DFS.
 [Day 10: Syntax Scoring](http://adventofcode.com/2021/day/10)             | [day10.py](python/day10.py) | `dict(zip(...))` for easier typing
 [Day 11: Dumbo Octopus](http://adventofcode.com/2021/day/11)              | [day11.py](python/day11.py) | Iterative DFS.
-[Day 12](http://adventofcode.com/2021/day/12)                             | [day12.py](python/day12.py) |
+[Day 12: Passage Pathing](http://adventofcode.com/2021/day/12)            | [day12.py](python/day12.py) | Recursive DFS.
 [Day 13](http://adventofcode.com/2021/day/13)                             | [day13.py](python/day13.py) |
 [Day 14](http://adventofcode.com/2021/day/14)                             | [day14.py](python/day14.py) |
 [Day 15](http://adventofcode.com/2021/day/15)                             | [day15.py](python/day15.py) |
