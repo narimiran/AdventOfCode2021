@@ -2,18 +2,17 @@ from aoc import read_input
 from collections import defaultdict
 
 
-def traverse(a, seen, can_twice):
-    if a == 'end': return 1
-    paths = 0
-    for b in connections[a]:
-        if b.islower():
-            if b not in seen:
-                paths += traverse(b, seen | {b}, can_twice)
-            elif can_twice and b not in {'start', 'end'}:
-                paths += traverse(b, seen | {b}, False)
-        else:
-            paths += traverse(b, seen, can_twice)
-    return paths
+def traverse(can_twice, a='start', seen={'start'}):
+    if a == 'end': yield 1
+    else:
+        for b in connections[a]:
+            if b.islower():
+                if b not in seen:
+                    yield from traverse(can_twice, b, seen | {b})
+                elif can_twice and b not in {'start', 'end'}:
+                    yield from traverse(False, b, seen)
+            else:
+                yield from traverse(can_twice, b, seen)
 
 
 connections = defaultdict(list)
@@ -22,5 +21,5 @@ for line in read_input(12):
     connections[a].append(b)
     connections[b].append(a)
 
-print(traverse('start', {'start'}, False))
-print(traverse('start', {'start'}, True))
+print(sum(traverse(can_twice=False)))
+print(sum(traverse(can_twice=True)))
