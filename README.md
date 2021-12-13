@@ -37,7 +37,7 @@ Day 00: Helper file                                                        | [ao
 [Day 10: Syntax Scoring](http://adventofcode.com/2021/day/10)             | [day10.py](python/day10.py) | `dict(zip(...))` for easier typing
 [Day 11: Dumbo Octopus](http://adventofcode.com/2021/day/11)              | [day11.py](python/day11.py) | Iterative DFS.
 [Day 12: Passage Pathing](http://adventofcode.com/2021/day/12)            | [day12.py](python/day12.py) | Recursive DFS generator with `yield from`.
-[Day 13](http://adventofcode.com/2021/day/13)                             | [day13.py](python/day13.py) |
+[Day 13: Transparent Origami](http://adventofcode.com/2021/day/13)        | [day13.py](python/day13.py) | Fold. Not `fold`.
 [Day 14](http://adventofcode.com/2021/day/14)                             | [day14.py](python/day14.py) |
 [Day 15](http://adventofcode.com/2021/day/15)                             | [day15.py](python/day15.py) |
 [Day 16](http://adventofcode.com/2021/day/16)                             | [day16.py](python/day16.py) |

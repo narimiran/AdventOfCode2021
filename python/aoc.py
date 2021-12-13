@@ -47,7 +47,7 @@ def sign(n):
     elif n < 0: return -1
     else: return 0
 
-def line_print(lines):
+def print_2d(lines):
     for line in lines:
         print(cat(line))
 
@@ -73,6 +73,14 @@ def list2grid(lines):
             for y, line in enumerate(lines)
             for x, val in enumerate(line)}
 
+def grid2list(grid):
+    max_x, max_y = map(max, zip(*grid))
+    lines = [[' ' for _ in range(max_x+1)]
+                  for _ in range(max_y+1)]
+    for x, y in grid:
+        lines[y][x] = '█'
+    return lines
+
 
 if __name__ == "__main__":
     assert cat(["ab", "cd", "ef"]) == "abcdef"
@@ -96,3 +104,5 @@ if __name__ == "__main__":
                                                  (4, 8), (5, 8), (6, 8))
     assert list2grid([[10, 20], [30, 40]]) == {(0, 0): 10, (1, 0): 20,
                                                (0, 1): 30, (1, 1): 40}
+    assert grid2list({(0, 1), (1, 0), (2, 0)}) == [[' ', '#', '#'],
+                                                   ['#', ' ', ' ']]
