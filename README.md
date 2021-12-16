@@ -40,7 +40,7 @@ Day 00: Helper file                                                        | [ao
 [Day 13: Transparent Origami](http://adventofcode.com/2021/day/13)        | [day13.py](python/day13.py) | Fold. Not `fold`.
 [Day 14: Extended Polymerization](http://adventofcode.com/2021/day/14)    | [day14.py](python/day14.py) | `Counter` to the rescue.
 [Day 15: Chiton](http://adventofcode.com/2021/day/15)                     | [day15.py](python/day15.py) | Dijkstra.
-[Day 16](http://adventofcode.com/2021/day/16)                             | [day16.py](python/day16.py) |
+[Day 16: Packet Decoder](http://adventofcode.com/2021/day/16)             | [day16.py](python/day16.py) | `iter` for some elegant stream implementation.
 [Day 17](http://adventofcode.com/2021/day/17)                             | [day17.py](python/day17.py) |
 [Day 18](http://adventofcode.com/2021/day/18)                             | [day18.py](python/day18.py) |
 [Day 19](http://adventofcode.com/2021/day/19)                             | [day19.py](python/day19.py) |
