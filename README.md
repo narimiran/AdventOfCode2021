@@ -42,7 +42,7 @@ Day 00: Helper file                                                        | [ao
 [Day 15: Chiton](http://adventofcode.com/2021/day/15)                     | [day15.py](python/day15.py) | Dijkstra.
 [Day 16: Packet Decoder](http://adventofcode.com/2021/day/16)             | [day16.py](python/day16.py) | `iter` for some elegant stream implementation.
 [Day 17: Trick Shot](http://adventofcode.com/2021/day/17)                 | [day17.py](python/day17.py) | Analytical + brute force.
-[Day 18](http://adventofcode.com/2021/day/18)                             | [day18.py](python/day18.py) |
+[Day 18: Snailfish](http://adventofcode.com/2021/day/18)                  | [day18.py](python/day18.py) | My first ever `eval` in 7 instances of AoC.
 [Day 19](http://adventofcode.com/2021/day/19)                             | [day19.py](python/day19.py) |
 [Day 20](http://adventofcode.com/2021/day/20)                             | [day20.py](python/day20.py) |
 [Day 21](http://adventofcode.com/2021/day/21)                             | [day21.py](python/day21.py) |
