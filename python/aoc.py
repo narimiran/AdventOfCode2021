@@ -74,17 +74,19 @@ def neighbours(x, y, amount=4):
              amount == 9):
             yield (x+dx, y+dy)
 
-def list2grid(lines):
+def list2grid(lines, pred=None):
     return {(x, y): val
             for y, line in enumerate(lines)
-            for x, val in enumerate(line)}
+            for x, val in enumerate(line)
+            if (pred(val) if pred else True)}
 
-def grid2list(grid):
+def grid2list(grid, pred=bool):
     max_x, max_y = map(max, zip(*grid))
     lines = [[' ' for _ in range(max_x+1)]
                   for _ in range(max_y+1)]
     for x, y in grid:
-        lines[y][x] = '█'
+        if pred(grid[(x, y)]):
+            lines[y][x] = '█'
     return lines
 
 
@@ -110,5 +112,5 @@ if __name__ == "__main__":
                                                  (4, 8), (5, 8), (6, 8))
     assert list2grid([[10, 20], [30, 40]]) == {(0, 0): 10, (1, 0): 20,
                                                (0, 1): 30, (1, 1): 40}
-    assert grid2list({(0, 1), (1, 0), (2, 0)}) == [[' ', '#', '#'],
-                                                   ['#', ' ', ' ']]
+    assert grid2list({(0, 1): 1, (1, 0): 1, (2, 0): 1}) == [[' ', '█', '█'],
+                                                            ['█', ' ', ' ']]
