@@ -45,7 +45,7 @@ Day 00: Helper file                                                        | [ao
 [Day 18: Snailfish](http://adventofcode.com/2021/day/18)                  | [day18.py](python/day18.py) | My first ever `eval` in 7 instances of AoC.
 [Day 19: Beacon Scanner](http://adventofcode.com/2021/day/19)             | [day19.py](python/day19.py) |
 [Day 20: Trench Map](http://adventofcode.com/2021/day/20)                 | [day20.py](python/day20.py) | I had 9-neighbours helper ready.
-[Day 21](http://adventofcode.com/2021/day/21)                             | [day21.py](python/day21.py) |
+[Day 21: Dirac Dice](http://adventofcode.com/2021/day/21)                 | [day21.py](python/day21.py) | Lanternfish says hi!
 [Day 22](http://adventofcode.com/2021/day/22)                             | [day22.py](python/day22.py) |
 [Day 23](http://adventofcode.com/2021/day/23)                             | [day23.py](python/day23.py) |
 [Day 24](http://adventofcode.com/2021/day/24)                             | [day24.py](python/day24.py) |
