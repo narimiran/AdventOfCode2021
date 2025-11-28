@@ -6,12 +6,13 @@ All my Advent of Code repos:
 * [AoC 2016 in Python, Clojure (+ visualizations)](https://github.com/narimiran/advent_of_code_2016)
 * [AoC 2017 in Nim, OCaml, Python](https://github.com/narimiran/AdventOfCode2017)
 * [AoC 2018 in Nim, Python, Racket](https://github.com/narimiran/AdventOfCode2018)
-* [AoC 2019 in OCaml, Python](https://github.com/narimiran/AdventOfCode2019)
+* [AoC 2019 in OCaml, Python, Clojure](https://github.com/narimiran/AdventOfCode2019)
 * [AoC 2020 in Nim, one liner-y Python, Racket](https://github.com/narimiran/AdventOfCode2020)
 * [AoC 2021 in Python, Racket](https://github.com/narimiran/AdventOfCode2021) (this repo)
 * [AoC 2022 in Python, Clojure](https://github.com/narimiran/AdventOfCode2022)
 * [AoC 2023 in Clojure](https://github.com/narimiran/AdventOfCode2023)
-* [AoC 2024 in Clojure (Clerk notebooks)](https://github.com/narimiran/aoc2024)
+* [AoC 2024 in Clojure (Clerk notebooks), Python, Elixir](https://github.com/narimiran/aoc2024)
+* [AoC 2025 in Clojure (Clerk notebooks)](https://github.com/narimiran/aoc2025)
 
 
 &nbsp;
@@ -22,6 +23,7 @@ I'll probably add solutions in other languages on some later date.
 
 EDIT, November 2022: And I did - I've solved initial days in Racket too.
 
+EDIT, November 2025: Days 19, 22, 23 were solved in Clojure.
 
 
 ## Solutions
@@ -48,10 +50,10 @@ Day 00: Helper file                                                       | [aoc
 [Day 16: Packet Decoder](http://adventofcode.com/2021/day/16)             | [day16.py](python/day16.py)  |                               | `iter` for some elegant stream implementation.
 [Day 17: Trick Shot](http://adventofcode.com/2021/day/17)                 | [day17.py](python/day17.py)  |                               | Analytical + brute force.
 [Day 18: Snailfish](http://adventofcode.com/2021/day/18)                  | [day18.py](python/day18.py)  |                               | My first ever `eval` in 7 instances of AoC.
-[Day 19: Beacon Scanner](http://adventofcode.com/2021/day/19)             | [day19.py](python/day19.py)  |                               |
+[Day 19: Beacon Scanner](http://adventofcode.com/2021/day/19)             | [day19.py](python/day19.py)  | [day19.clj](clojure/day19.clj) |
 [Day 20: Trench Map](http://adventofcode.com/2021/day/20)                 | [day20.py](python/day20.py)  |                               | I had 9-neighbours helper ready.
 [Day 21: Dirac Dice](http://adventofcode.com/2021/day/21)                 | [day21.py](python/day21.py)  |                               | Lanternfish says hi!
-[Day 22: Reactor Reboot](http://adventofcode.com/2021/day/22)             | [day22.py](python/day22.py)  |                               |
-[Day 23: Amphipod](http://adventofcode.com/2021/day/23)                   | [day23.py](python/day23.py)  |                               |
+[Day 22: Reactor Reboot](http://adventofcode.com/2021/day/22)             | [day22.py](python/day22.py)  | [day22.clj](clojure/day22.clj) |
+[Day 23: Amphipod](http://adventofcode.com/2021/day/23)                   | [day23.py](python/day23.py)  | [day23.clj](clojure/day23.clj) |
 [Day 24: Arithmetic Logic Unit](http://adventofcode.com/2021/day/24)      | [day24.py](python/day24.py)  |                               |
 [Day 25: Sea Cucumber](http://adventofcode.com/2021/day/25)               | [day25.py](python/day25.py)  |                               |
